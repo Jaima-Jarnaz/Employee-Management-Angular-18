@@ -1,0 +1,52 @@
+<!-- <input
+  class="form-control"
+  type="text"
+  [value]="name"
+  [(ngModel)]="name"
+  id=""
+/>
+<p>Input value is {{ name }}</p>
+<div class="d-grid gap-2">
+  <button type="button" class="btn btn-success">Button</button>
+</div> -->
+
+<div class="container w-60 h-60 p-5 bg-info">
+  <div class="row g-3">
+    <!-- First Column: Select Role -->
+    <div class="col-md-6">
+      <label for="role-select">Select role</label>
+      <select
+        class="form-select"
+        id="role-select"
+        aria-label="Default select example"
+      >
+        <option *ngFor="let role of roleList" [value]="role.roleId">
+          {{ role.role }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Second Column: Input Name -->
+    <div class="col-md-6">
+      <label for="name-input">Name</label>
+      <input
+        class="form-control"
+        type="text"
+        [value]="name"
+        [(ngModel)]="name"
+        id="name-input"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="card text-white bg-dark m-3">
+  <div class="card-body">
+    <h5 class="card-title">All Roles</h5>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let role of roleList">
+        {{ role.role }}
+      </li>
+    </ul>
+  </div>
+</div>

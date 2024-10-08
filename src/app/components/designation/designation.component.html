@@ -1,0 +1,24 @@
+<div class="container p-5 m-5 bg-warning">
+  @if (isLoading) {
+  <app-loader></app-loader>
+  }@else {
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#SL</th>
+        <th scope="col">Designation ID</th>
+        <th scope="col">Designation</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of designationsList; track $index) {
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ item.designationId }}</td>
+        <td>{{ item.designation }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }
+</div>

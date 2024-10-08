@@ -1,0 +1,31 @@
+<div class="container p-3">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <button
+        class="nav-link"
+        [ngClass]="currentComponent == 'Roles' ? 'active' : ''"
+        (click)="changeCurrentComponent('Roles')"
+      >
+        ROLES
+      </button>
+    </li>
+    <li class="nav-item">
+      <button
+        class="nav-link"
+        [ngClass]="currentComponent == 'Designation' ? 'active' : ''"
+        (click)="changeCurrentComponent('Designation')"
+      >
+        DESIGNATION
+      </button>
+    </li>
+  </ul>
+
+  <div class="row">
+    <div class="col-12" *ngIf="currentComponent == 'Roles'">
+      <app-roles></app-roles>
+    </div>
+    <div class="col-12" *ngIf="currentComponent == 'Designation'">
+      <app-designation></app-designation>
+    </div>
+  </div>
+</div>
